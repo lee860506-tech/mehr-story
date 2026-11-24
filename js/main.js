@@ -34,7 +34,7 @@
           ${n.tagline ? `<p class="novel__tagline">“${esc(n.tagline)}”</p>` : ""}
           <p class="novel__meta">${n.genre ? esc(n.genre) : PH("장르 · 키워드 준비 중")}</p>
           <button class="crystal-btn crystal-btn--sm" type="button" data-open="${esc(n.id)}">
-            <span class="crystal-btn__gem"><img src="assets/img/icons/celestial/ui-book.svg" alt="" loading="lazy"></span>
+            <span class="crystal-btn__gem"><img src="assets/img/icons/crystal/portfolio.webp" alt="" loading="lazy"></span>
             <span class="crystal-btn__label">Open the Book</span>
           </button>
         </div>

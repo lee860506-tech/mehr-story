@@ -156,14 +156,14 @@ window.MEHR_DATA = {
       type: "gmail",
       label: "Gmail",
       value: "",                 // TODO: 예) yeonwol@gmail.com
-      icon: "assets/img/icons/celestial/ui-mail.svg",
+      icon: "assets/img/icons/crystal/gmail.webp",
       note: "작품 문의 · 협업 제안"
     },
     {
       type: "instagram",
       label: "Instagram",
       value: "",                 // TODO: 예) yeonwol_story  (@ 없이 아이디만)
-      icon: "assets/img/icons/celestial/ui-instagram.svg",
+      icon: "assets/img/icons/crystal/instagram.webp",
       note: "작업 일지 · 소식"
     }
   ]

@@ -8,8 +8,6 @@
     'audio-drama': { x: -2, rotation: -5 },
     podcast: { y: -4, scale: 1.035 },
     'cinematic-story': { rotation: 6 },
-    'story-universe': { rotation: 7 },
-    about: { x: 2, y: -3 },
     skill: { rotation: 8 },
     contact: { y: -3, rotation: -3 }
   };
@@ -18,7 +16,6 @@
     const wrap = document.createElement('span');
     wrap.className = 'celestial-emblem';
     if (icon.classList.contains('section__icon')) wrap.classList.add('celestial-emblem--section');
-    if (icon.classList.contains('section__emblem')) wrap.classList.add('celestial-emblem--heading');
     wrap.style.setProperty('--float-delay', (-index * .62) + 's');
     const art = document.createElement('span');
     art.className = 'celestial-emblem__art';
