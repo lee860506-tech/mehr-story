@@ -58,19 +58,19 @@
       gr.addColorStop(0, `rgba(${c},${a})`); gr.addColorStop(0.5, `rgba(${c},${a * 0.4})`); gr.addColorStop(1, `rgba(${c},0)`);
       g.fillStyle = gr; g.beginPath(); g.arc(x, y, r, 0, TAU); g.fill();
     };
-    const pal = ["67,56,41", "69,54,34", "60,63,69", "36,41,53", "42,33,43", "90,71,43"];
+    const pal = ["54,48,38", "73,58,35", "61,61,63", "30,34,43", "31,27,32", "88,68,40"];
     // 대각선 은하수 띠를 따라 성운 덩어리 배치
     const bx0 = -0.1, by0 = 0.15, bx1 = 1.1, by1 = 0.75;
     for (let i = 0; i < 60; i++) {
       const t = Math.random(), off = (Math.random() - 0.5) * 0.45;
       const x = (bx0 + (bx1 - bx0) * t) * w - off * h * 0.5, y = (by0 + (by1 - by0) * t) * h + off * h;
-      blob(x, y, rand(0.08, 0.3) * Math.max(w, h), pal[(Math.random() * pal.length) | 0], rand(0.045, 0.10));
+      blob(x, y, rand(0.08, 0.3) * Math.max(w, h), pal[(Math.random() * pal.length) | 0], rand(0.038, 0.083));
     }
-    for (let i = 0; i < 14; i++) blob(Math.random() * w, Math.random() * h, rand(0.1, 0.25) * Math.max(w, h), pal[(Math.random() * pal.length) | 0], rand(0.022, 0.048));
+    for (let i = 0; i < 14; i++) blob(Math.random() * w, Math.random() * h, rand(0.1, 0.25) * Math.max(w, h), pal[(Math.random() * pal.length) | 0], rand(0.018, 0.039));
     // 은하 중심의 밝은 빛
     for (let i = 0; i < 9; i++) {
       const t = rand(0.3, 0.75);
-      blob((bx0 + (bx1 - bx0) * t) * w, (by0 + (by1 - by0) * t) * h + rand(-0.04, 0.04) * h, rand(0.045, 0.10) * Math.max(w, h), "193,170,124", rand(0.03, 0.058));
+      blob((bx0 + (bx1 - bx0) * t) * w, (by0 + (by1 - by0) * t) * h + rand(-0.04, 0.04) * h, rand(0.038, 0.083) * Math.max(w, h), "193,170,124", rand(0.03, 0.058));
     }
     // 아주 촘촘한 미세 별(띠 근처에 더 많이)
     const dots = Math.round(w * h / 90);
