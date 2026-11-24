@@ -183,6 +183,22 @@
   <p class="footer__copy">© 2026 MEHR STORY. All Rights Reserved.</p>
 </footer>
 
+<!-- 배경음악 컨트롤 -->
+<div class="bgm" id="bgm" data-state="off">
+  <button class="bgm__toggle" id="bgmToggle" type="button" aria-pressed="false" aria-label="배경음악 켜기" aria-controls="bgmPanel">
+    <span class="bgm__gem" aria-hidden="true"></span>
+    <span class="bgm__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <svg class="bgm__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9H5z" fill="currentColor"/><path d="M17 9l4 6M21 9l-4 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button>
+  <div class="bgm__panel" id="bgmPanel">
+    <span class="bgm__title" id="bgmTitle" aria-live="polite">Background Music</span>
+    <label class="bgm__vol">
+      <span class="sr-only">배경음악 볼륨</span>
+      <input type="range" id="bgmVolume" min="0" max="100" step="1" value="32" aria-label="배경음악 볼륨">
+    </label>
+  </div>
+</div>
+
 <button class="top-btn" id="topBtn" type="button" aria-label="맨 위로 이동">
   <span class="top-btn__gem"></span><span class="top-btn__label">TOP</span>
 </button>
@@ -206,6 +222,7 @@
 <script src="js/vendor/lenis.min.js"></script>
 <!-- 콘텐츠 데이터 → 화면 -->
 <script src="js/data.js"></script>
+<script src="js/bgm.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

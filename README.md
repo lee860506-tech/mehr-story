@@ -19,6 +19,7 @@
 | 프로필 문구·학력 | `profile` | |
 | 스킬 | `creative`, `technical` | |
 | Gmail / Instagram | `contacts[].value` | 이메일 주소 / 인스타 아이디(@ 없이) |
+| 배경음악 곡·기본 볼륨 | `bgm.tracks`, `bgm.volume` | 파일은 `assets/audio/` (mp3 필수, ogg 선택) |
 
 ## 폴더 구조
 ```
@@ -26,8 +27,10 @@ index.html          페이지 구조 (헤더·히어로·섹션·푸터)
 css/style.css       디자인 (색상 변수는 :root)
 js/data.js          ★ 콘텐츠 데이터
 js/main.js          인트로·애니메이션·모달 동작
+js/bgm.js           배경음악 재생·볼륨 컨트롤
 js/vendor/          GSAP, ScrollTrigger, Lenis
 assets/video/       인트로 영상 (webm/mp4), 포스터
+assets/audio/       배경음악 (mp3 + ogg)
 assets/img/         로고, 표지, 배너, 크리스탈 아이콘, 장식
 ```
 
@@ -41,6 +44,15 @@ assets/img/         로고, 표지, 배너, 크리스탈 아이콘, 장식
 - 영상(assets/video)은 1회 재생 → 마지막 장면에서 멈추고 어둡게 → 배경 없는 MEHR STORY 로고가 금빛 입자와 함께 휘리릭 나타납니다.
 - 로고를 클릭하거나 Enter 키를 누르면 홈페이지로 입장합니다. 재생 중에는 Skip 버튼으로 바로 입장할 수 있습니다.
 - 투명 로고 파일: `assets/img/brand/logo-transparent.png` (원본 크기), `.webp`, `-sm.webp`(헤더·푸터용)
+
+## 배경음악 (BGM)
+- 곡: 직접 만든 저작권 없는 곡 2개를 순서대로 반복 재생 (곡이 바뀔 때 부드럽게 겹쳐 전환)
+  1. Binding the Unsaid — 보컬을 제거한 반주(Instrumental) 버전, 더 잔잔해서 첫 곡
+  2. The Heavy Curtain — 원래 연주곡이라 그대로 사용
+- 두 곡 모두 배경음 크기로 음량을 맞추고(약 -18 LUFS) 앞뒤에 페이드를 넣었습니다.
+- 자동재생 없음: 인트로에서 로고(Click to Enter)를 눌러 입장할 때 천천히 커지며 시작됩니다.
+- 왼쪽 아래 금빛 버튼 = 켜기/끄기, 마우스를 올리면(모바일은 탭) 볼륨 슬라이더가 나타납니다.
+  켜짐/꺼짐과 볼륨은 브라우저에 저장되어 다음 방문에도 유지됩니다. (기본 볼륨 32%)
 
 ## 접근성 / 성능
 - `prefers-reduced-motion` 설정 시: 인트로 영상 자동재생 없이 정지 화면 + 입장 배너, 패럴랙스·입자 움직임 최소화.

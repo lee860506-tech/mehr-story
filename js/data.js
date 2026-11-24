@@ -137,6 +137,18 @@ window.MEHR_DATA = {
     { category: "IDE & DB & Deploy",  gem: "gold",     items: ["VS Code", "Supabase", "GitHub", "Vercel"] }
   ],
 
+  /* ---------------- 배경음악 (BGM) ----------------
+     tracks 순서대로 재생 후 처음으로 돌아가 반복합니다.
+     volume: 처음 방문 시 기본 볼륨 (0 ~ 1)
+     곡 추가: assets/audio 폴더에 mp3(필수)/ogg(선택)를 넣고 아래에 한 줄 추가  */
+  bgm: {
+    volume: 0.32,
+    tracks: [
+      { title: "Binding the Unsaid (Instrumental)", mp3: "assets/audio/binding-the-unsaid.mp3", ogg: "assets/audio/binding-the-unsaid.ogg" },
+      { title: "The Heavy Curtain",                 mp3: "assets/audio/the-heavy-curtain.mp3", ogg: "assets/audio/the-heavy-curtain.ogg" }
+    ]
+  },
+
   /* ---------------- 연락처 ----------------
      value가 비어 있으면 '준비 중'으로 표시되고 클릭되지 않습니다.  */
   contacts: [

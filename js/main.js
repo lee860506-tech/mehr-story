@@ -404,9 +404,11 @@
     window.scrollTo(0, 0);
     playHero();
     if (hasGSAP) ScrollTrigger.refresh();
+    window.MEHR_BGM && window.MEHR_BGM.reveal();
   }
   function enterSite() {
     if (entering) return; entering = true;
+    window.MEHR_BGM && window.MEHR_BGM.start(); // 사용자 클릭 시점에 배경음악 시작
     if (!hasGSAP || REDUCED) { intro.remove(); finishIntro(); return; }
     const spill = $(".intro__spill");
     (introTl && introTl.kill(), gsap.timeline({ onComplete: () => { stopParticles(); try { video.pause(); } catch (e) {} intro.remove(); } }))
@@ -502,6 +504,7 @@
   }
   function skipIntro() {
     if (entering) return; entering = true;
+    window.MEHR_BGM && window.MEHR_BGM.start();
     if (introTl) introTl.kill(); stopParticles();
     try { video.pause(); } catch (_) {}
     if (hasGSAP && !REDUCED) gsap.to(intro, { opacity: 0, duration: 0.9, ease: "power2.inOut", onComplete: () => intro.remove() });
