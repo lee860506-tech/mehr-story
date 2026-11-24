@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEHR STORY — 연월 YEONWOL | Every Light Has a Story.</title>
+<meta name="description" content="소설가 연월(YEONWOL)의 개인 브랜드 포트폴리오, MEHR STORY. 상상을 이야기로, 이야기를 하나의 세계로.">
+<meta name="theme-color" content="#07050a">
+<meta property="og:title" content="MEHR STORY — 연월 YEONWOL">
+<meta property="og:description" content="Every Light Has a Story. From Imagination to Stories, From Stories to Worlds.">
+<meta property="og:image" content="assets/img/brand/logo-transparent.png">
+<link rel="icon" href="assets/img/icons/home.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/video/intro-poster.jpg">
+<link rel="preload" as="image" href="assets/img/brand/logo-transparent.webp">
+<link rel="stylesheet" href="css/style.css">
+<noscript><style>.intro{display:none}body.is-loading{overflow:auto}</style></noscript>
+</head>
+<body class="is-loading">
+
+<!-- ============ INTRO: 시네마틱 영상 오프닝 (1회 재생 → 마지막 장면 + 입장 배너) ============ -->
+<div class="intro" id="intro" role="dialog" aria-label="MEHR STORY 인트로">
+  <video class="intro__video" id="introVideo" muted playsinline preload="auto" poster="assets/video/intro-poster.jpg" aria-hidden="true">
+    <source src="assets/video/intro.webm" type="video/webm">
+    <source src="assets/video/intro.mp4" type="video/mp4">
+  </video>
+  <div class="intro__shade" aria-hidden="true"></div>
+  <canvas id="introCanvas" aria-hidden="true"></canvas>
+  <div class="intro__center">
+    <button class="intro__logo" id="introEnter" type="button" aria-label="MEHR STORY — Every Light Has a Story. 홈페이지 입장하기">
+      <img class="intro__logo-img" src="assets/img/brand/logo-transparent.webp" width="836" height="448" alt="MEHR STORY — Every Light Has a Story.">
+      <img class="intro__logo-glint" src="assets/img/brand/logo-transparent.webp" width="836" height="448" alt="" aria-hidden="true">
+    </button>
+    <p class="intro__hint" aria-hidden="true"><span>Click to Enter</span></p>
+  </div>
+  <div class="intro__spill" aria-hidden="true"></div>
+  <button class="intro__skip" type="button" id="introSkip">Skip</button>
+</div>
+
+<!-- 전역 배경: 별빛 · 금빛 입자 / 마우스 빛 -->
+<canvas id="dust" aria-hidden="true"></canvas>
+<div class="cursor-glow" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <a href="#home" class="header__logo" data-scroll-to="#home" aria-label="MEHR STORY 홈으로">
+    <img src="assets/img/brand/logo-transparent-sm.webp" alt="MEHR STORY 로고" width="418" height="224">
+  </a>
+  <nav class="nav" id="nav" aria-label="주요 메뉴">
+    <ul class="nav__list">
+      <li><a class="nav__link" href="#home" data-scroll-to="#home"><span class="nav__icon"><img src="assets/img/icons/home.webp" alt="" width="112" height="105"></span><span class="nav__text">Home</span></a></li>
+      <li><a class="nav__link" href="#portfolio" data-scroll-to="#portfolio"><span class="nav__icon"><img src="assets/img/icons/portfolio.webp" alt="" width="110" height="105"></span><span class="nav__text">Portfolio</span></a></li>
+      <li><a class="nav__link" href="#profile" data-scroll-to="#profile"><span class="nav__icon"><img src="assets/img/icons/profile.webp" alt="" width="109" height="105"></span><span class="nav__text">Profile</span></a></li>
+      <li><a class="nav__link" href="#skill" data-scroll-to="#skill"><span class="nav__icon"><img src="assets/img/icons/skill.webp" alt="" width="109" height="105"></span><span class="nav__text">Skill</span></a></li>
+      <li><a class="nav__link" href="#contact" data-scroll-to="#contact"><span class="nav__icon"><img src="assets/img/icons/contact.webp" alt="" width="108" height="105"></span><span class="nav__text">Contact</span></a></li>
+    </ul>
+  </nav>
+  <button class="burger" id="burger" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home" data-section="home">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__sky layer" data-depth="0.15"></div>
+      <div class="hero__moon layer" data-depth="0.35"><div class="moon"></div></div>
+      <div class="hero__stars layer" data-depth="0.25"></div>
+      <img class="hero__still layer" data-depth="0.55" src="assets/img/ornaments/quill-books.webp" alt="" width="422" height="228">
+      <img class="hero__orn hero__orn--fox layer" data-depth="0.7" src="assets/img/ornaments/fox.webp" alt="" width="100" height="160">
+      <img class="hero__orn hero__orn--rose layer" data-depth="0.8" src="assets/img/ornaments/rose.webp" alt="" width="98" height="84">
+      <img class="hero__orn hero__orn--key layer" data-depth="0.9" src="assets/img/ornaments/key.webp" alt="" width="56" height="90">
+      <div class="hero__book layer" data-depth="0.45">
+        <div class="book-rays"></div>
+        <svg class="book-svg" viewBox="0 0 400 170" fill="none">
+          <defs>
+            <linearGradient id="bkGold" x1="0" x2="1"><stop offset="0" stop-color="#7a5a2c"/><stop offset=".5" stop-color="#f3dca6"/><stop offset="1" stop-color="#7a5a2c"/></linearGradient>
+            <radialGradient id="bkPage" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#fff6dc"/><stop offset=".6" stop-color="#d9bf86" stop-opacity=".55"/><stop offset="1" stop-color="#3a2a14" stop-opacity=".2"/></radialGradient>
+          </defs>
+          <path d="M200 40 C150 18 80 16 18 30 L18 140 C80 126 150 128 200 152 Z" fill="url(#bkPage)" stroke="url(#bkGold)" stroke-width="1.5"/>
+          <path d="M200 40 C250 18 320 16 382 30 L382 140 C320 126 250 128 200 152 Z" fill="url(#bkPage)" stroke="url(#bkGold)" stroke-width="1.5"/>
+          <path d="M200 40 L200 152" stroke="url(#bkGold)" stroke-width="1.2"/>
+          <g stroke="#c9a45f" stroke-opacity=".45" stroke-width=".8">
+            <path d="M40 52 C90 42 150 44 185 58"/><path d="M40 68 C90 58 150 60 185 74"/><path d="M40 84 C90 74 150 76 185 90"/><path d="M40 100 C90 90 150 92 185 106"/>
+            <path d="M360 52 C310 42 250 44 215 58"/><path d="M360 68 C310 58 250 60 215 74"/><path d="M360 84 C310 74 250 76 215 90"/><path d="M360 100 C310 90 250 92 215 106"/>
+          </g>
+          <path d="M10 146 C80 132 150 134 200 160 C250 134 320 132 390 146" stroke="url(#bkGold)" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal-up"><span class="line"></span>NOVELIST · YEONWOL<span class="line"></span></p>
+      <h1 class="hero__title">
+        <span class="sr-only">MEHR STORY — </span>
+        <span class="hero__ko" data-write>상상을 이야기로,</span>
+        <span class="hero__ko" data-write>이야기를 하나의 세계로.</span>
+      </h1>
+      <p class="hero__en" data-write-en>From Imagination to Stories, From Stories to Worlds.</p>
+      <p class="hero__slogan reveal-up">Every Light Has a Story.</p>
+      <p class="hero__author reveal-up"><strong>연월 <span>YEONWOL</span></strong><em>Novelist · Storyteller · AI Creator</em></p>
+      <a href="#portfolio" class="crystal-btn hero__cta reveal-up" data-scroll-to="#portfolio">
+        <span class="crystal-btn__gem"><img src="assets/img/icons/portfolio.webp" alt="" width="110" height="105"></span>
+        <span class="crystal-btn__label">Enter the Stories</span>
+      </a>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><span>Scroll</span><i></i></div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><span></span><i></i><span></span></div>
+
+  <!-- ============ PORTFOLIO ============ -->
+  <section class="section portfolio" id="portfolio" data-section="portfolio">
+    <div class="section__head">
+      <img class="section__banner" src="assets/img/banners/portfolio.webp" alt="" width="756" height="135" loading="lazy" decoding="async">
+      <p class="section__script">Portfolio</p>
+      <h2 class="section__title">SELECTED NOVELS</h2>
+      <p class="section__lead">한 장씩 넘길 때마다 다른 빛이 흘러나오는, 연월의 이야기들.</p>
+    </div>
+    <!-- 작품 목록은 js/data.js 의 novels 배열에서 자동 생성됩니다 -->
+    <div class="novels" id="novels"></div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><span></span><i></i><span></span></div>
+
+  <!-- ============ PROFILE ============ -->
+  <section class="section profile" id="profile" data-section="profile">
+    <div class="section__head">
+      <img class="section__banner" src="assets/img/banners/profile.webp" alt="" width="760" height="135" loading="lazy" decoding="async">
+      <p class="section__script">Profile</p>
+      <h2 class="section__title">ABOUT YEONWOL</h2>
+    </div>
+    <div class="profile__grid" id="profileBody"></div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><span></span><i></i><span></span></div>
+
+  <!-- ============ SKILL ============ -->
+  <section class="section skill" id="skill" data-section="skill">
+    <div class="section__head">
+      <img class="section__icon" src="assets/img/icons/skill.webp" alt="" width="109" height="105" loading="lazy">
+      <p class="section__script">Skill</p>
+      <h2 class="section__title">THE CRAFT OF WORLDS</h2>
+      <p class="section__lead">AI는 이야기를 대신 쓰는 손이 아니라, 이야기 속 세계를 더 멀리 비추는 빛입니다.<br>모든 기술은 하나의 이야기를 완성하기 위한 도구로 쓰입니다.</p>
+    </div>
+
+    <div class="skill__creative">
+      <h3 class="sub-title"><span>Creative Competencies</span></h3>
+      <ul class="creative-list" id="creativeList"></ul>
+    </div>
+
+    <div class="skill__tech">
+      <h3 class="sub-title"><span>Technical Skills</span></h3>
+      <div class="gem-grid" id="techGrid"></div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><span></span><i></i><span></span></div>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact" id="contact" data-section="contact">
+    <div class="section__head">
+      <img class="section__icon" src="assets/img/icons/contact.webp" alt="" width="108" height="105" loading="lazy">
+      <p class="section__script">Contact</p>
+      <h2 class="section__title">LETTERS TO THE AUTHOR</h2>
+      <p class="section__lead">이야기를 사랑하는 독자, 함께 세계를 만들고 싶은 창작자 누구에게나<br>이 서재의 문은 열려 있습니다. 한 통의 편지를 남겨 주세요.</p>
+    </div>
+    <div class="contact__cards" id="contactCards"></div>
+    <img class="contact__seal" src="assets/img/ornaments/seal.webp" alt="" width="88" height="90" loading="lazy">
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <img class="footer__logo" src="assets/img/brand/logo-transparent-sm.webp" alt="MEHR STORY" width="418" height="224" loading="lazy">
+  <p class="footer__brand">MEHR STORY</p>
+  <p class="footer__slogan">Every Light Has a Story.</p>
+  <p class="footer__copy">© 2026 MEHR STORY. All Rights Reserved.</p>
+</footer>
+
+<button class="top-btn" id="topBtn" type="button" aria-label="맨 위로 이동">
+  <span class="top-btn__gem"></span><span class="top-btn__label">TOP</span>
+</button>
+
+<!-- ============ NOVEL MODAL (책이 펼쳐지는 상세 보기) ============ -->
+<div class="book-modal" id="bookModal" role="dialog" aria-modal="true" aria-labelledby="bmTitle" hidden>
+  <div class="book-modal__backdrop" data-close></div>
+  <div class="book" id="book" data-lenis-prevent>
+    <div class="book__cover" id="bookCover"><img alt="" id="bookCoverImg"><div class="book__cover-back"></div></div>
+    <div class="book__page book__page--left"><img alt="" id="bookLeftImg"></div>
+    <div class="book__page book__page--right" id="bookRight" data-lenis-prevent></div>
+  </div>
+  <button class="book-modal__close" type="button" data-close aria-label="닫기">✕</button>
+</div>
+
+<noscript><p class="noscript">이 사이트는 JavaScript를 사용합니다. 브라우저에서 JavaScript를 켜 주세요.</p></noscript>
+
+<!-- 라이브러리 (오프라인에서도 동작하도록 로컬 포함) -->
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<!-- 콘텐츠 데이터 → 화면 -->
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
