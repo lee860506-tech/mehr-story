@@ -544,13 +544,9 @@ html{overflow-x:clip}
 }
 
 /* Celestial metallic icons */
-.nav__icon img,.crystal-btn__gem img,.contact-card img,.section__icon{
+.crystal-btn--sm .crystal-btn__gem img,.contact-card img,.section__icon{
   mix-blend-mode:normal;mask-image:none;-webkit-mask-image:none;filter:none;
 }
-.nav__icon img{width:23px;height:23px;opacity:.82}
-.nav__link.is-active .nav__icon::before{opacity:.48;animation:none}
-.nav__link.is-active .nav__icon img{filter:none}
-.crystal-btn__gem img{width:29px;height:29px}
 .crystal-btn--sm .crystal-btn__gem img{width:22px;height:22px}
 .contact-card img{width:96px;aspect-ratio:1;object-fit:contain;padding:18px}
 .book-modal__close-icon{width:20px;height:20px;margin:auto}
