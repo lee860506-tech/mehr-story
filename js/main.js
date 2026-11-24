@@ -34,7 +34,7 @@
           ${n.tagline ? `<p class="novel__tagline">“${esc(n.tagline)}”</p>` : ""}
           <p class="novel__meta">${n.genre ? esc(n.genre) : PH("장르 · 키워드 준비 중")}</p>
           <button class="crystal-btn crystal-btn--sm" type="button" data-open="${esc(n.id)}">
-            <span class="crystal-btn__gem"><img src="assets/img/icons/portfolio.webp" alt="" loading="lazy"></span>
+            <span class="crystal-btn__gem"><img src="assets/img/icons/celestial/ui-book.svg" alt="" loading="lazy"></span>
             <span class="crystal-btn__label">Open the Book</span>
           </button>
         </div>
@@ -62,21 +62,13 @@
       </div>`;
   }
 
-  const gemSVG = () => `
-    <svg class="gem" viewBox="0 0 48 48" aria-hidden="true">
-      <polygon points="24,3 40,15 34,43 14,43 8,15" fill="var(--g2)" opacity=".85"/>
-      <polygon points="24,3 40,15 24,20 8,15" fill="var(--g1)" opacity=".9"/>
-      <polygon points="8,15 24,20 14,43" fill="var(--g2)" opacity=".7"/>
-      <polygon points="40,15 24,20 34,43" fill="var(--g1)" opacity=".45"/>
-      <polygon points="24,20 34,43 14,43" fill="var(--g2)"/>
-      <polygon points="24,3 40,15 34,43 14,43 8,15" fill="none" stroke="#efd9a7" stroke-width="1.2"/>
-    </svg>`;
+  const skillIcon = `<img class="gem" src="assets/img/icons/celestial/ui-spark.svg" alt="" width="46" height="46" loading="lazy">`;
 
   function renderSkills() {
     $("#creativeList").innerHTML = D.creative.map((c) => `<li>${esc(c)}</li>`).join("");
     $("#techGrid").innerHTML = D.technical.map((t) => `
       <article class="gem-card" data-gem="${esc(t.gem)}"><div class="gem-card__in">
-        ${gemSVG()}
+        ${skillIcon}
         <h4>${esc(t.category)}</h4>
         <ul>${t.items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
       </div></article>`).join("");

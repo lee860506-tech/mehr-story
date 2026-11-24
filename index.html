@@ -9,7 +9,7 @@
 <meta property="og:title" content="MEHR STORY — 연월 YEONWOL">
 <meta property="og:description" content="Every Light Has a Story. From Imagination to Stories, From Stories to Worlds.">
 <meta property="og:image" content="assets/img/brand/logo-transparent.png">
-<link rel="icon" href="assets/img/icons/home.webp">
+<link rel="icon" href="assets/img/icons/celestial/ui-home.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&family=Pinyon+Script&display=swap" rel="stylesheet">
@@ -51,11 +51,11 @@
   </a>
   <nav class="nav" id="nav" aria-label="주요 메뉴">
     <ul class="nav__list">
-      <li><a class="nav__link" href="#home" data-scroll-to="#home"><span class="nav__icon"><img src="assets/img/icons/home.webp" alt="" width="112" height="105"></span><span class="nav__text">Home</span></a></li>
-      <li><a class="nav__link" href="#portfolio" data-scroll-to="#portfolio"><span class="nav__icon"><img src="assets/img/icons/portfolio.webp" alt="" width="110" height="105"></span><span class="nav__text">Portfolio</span></a></li>
-      <li><a class="nav__link" href="#profile" data-scroll-to="#profile"><span class="nav__icon"><img src="assets/img/icons/profile.webp" alt="" width="109" height="105"></span><span class="nav__text">Profile</span></a></li>
-      <li><a class="nav__link" href="#skill" data-scroll-to="#skill"><span class="nav__icon"><img src="assets/img/icons/skill.webp" alt="" width="109" height="105"></span><span class="nav__text">Skill</span></a></li>
-      <li><a class="nav__link" href="#contact" data-scroll-to="#contact"><span class="nav__icon"><img src="assets/img/icons/contact.webp" alt="" width="108" height="105"></span><span class="nav__text">Contact</span></a></li>
+      <li><a class="nav__link" href="#home" data-scroll-to="#home"><span class="nav__icon"><img src="assets/img/icons/celestial/ui-home.svg" alt="" width="112" height="105"></span><span class="nav__text">Home</span></a></li>
+      <li><a class="nav__link" href="#portfolio" data-scroll-to="#portfolio"><span class="nav__icon"><img src="assets/img/icons/celestial/ui-universe.svg" alt="" width="110" height="105"></span><span class="nav__text">Portfolio</span></a></li>
+      <li><a class="nav__link" href="#profile" data-scroll-to="#profile"><span class="nav__icon"><img src="assets/img/icons/celestial/ui-about.svg" alt="" width="109" height="105"></span><span class="nav__text">Profile</span></a></li>
+      <li><a class="nav__link" href="#skill" data-scroll-to="#skill"><span class="nav__icon"><img src="assets/img/icons/celestial/ui-skill.svg" alt="" width="109" height="105"></span><span class="nav__text">Skill</span></a></li>
+      <li><a class="nav__link" href="#contact" data-scroll-to="#contact"><span class="nav__icon"><img src="assets/img/icons/celestial/ui-mail.svg" alt="" width="108" height="105"></span><span class="nav__text">Contact</span></a></li>
     </ul>
   </nav>
   <button class="burger" id="burger" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav">
@@ -72,7 +72,6 @@
       <div class="hero__moon layer" data-depth="0.35"><div class="moon"></div></div>
       <img class="hero__still layer" data-depth="0.55" src="assets/img/ornaments/quill-books.webp" alt="" width="422" height="228">
       <img class="hero__orn hero__orn--fox layer" data-depth="0.7" src="assets/img/ornaments/fox.webp" alt="" width="100" height="160">
-      <img class="hero__orn hero__orn--rose layer" data-depth="0.8" src="assets/img/ornaments/rose.webp" alt="" width="98" height="84">
       <img class="hero__orn hero__orn--key layer" data-depth="0.9" src="assets/img/ornaments/key.webp" alt="" width="56" height="90">
       <div class="hero__veil"></div>
     </div>
@@ -89,7 +88,7 @@
       <p class="hero__slogan reveal-up">Every Light Has a Story.</p>
       <p class="hero__author reveal-up"><strong>연월 <span>YEONWOL</span></strong><em>Novelist · Storyteller · AI Creator</em></p>
       <a href="#portfolio" class="crystal-btn hero__cta reveal-up" data-scroll-to="#portfolio">
-        <span class="crystal-btn__gem"><img src="assets/img/icons/portfolio.webp" alt="" width="110" height="105"></span>
+        <span class="crystal-btn__gem"><img src="assets/img/icons/celestial/ui-universe.svg" alt="" width="110" height="105"></span>
         <span class="crystal-btn__label">Enter the Stories</span>
       </a>
     </div>
@@ -102,12 +101,24 @@
   <section class="section portfolio" id="portfolio" data-section="portfolio">
     <div class="section__head">
       <img class="section__banner" src="assets/img/banners/portfolio.webp" alt="" width="756" height="135" loading="lazy" decoding="async">
-      <p class="section__script">Portfolio</p>
+      <div class="section__emblem-title"><img class="section__emblem" src="assets/img/icons/celestial/story-universe.svg" alt="" decoding="async" loading="lazy" data-celestial="story-universe"><p class="section__script">Portfolio</p></div>
       <h2 class="section__title">SELECTED NOVELS</h2>
       <p class="section__lead">한 장씩 넘길 때마다 다른 빛이 흘러나오는, 연월의 이야기들.</p>
     </div>
     <!-- 작품 목록은 js/data.js 의 novels 배열에서 자동 생성됩니다 -->
     <div class="novels" id="novels"></div>
+    <div class="story-universe" aria-labelledby="storyUniverseTitle">
+      <p class="section__script">Story Universe</p>
+      <h3 class="section__title" id="storyUniverseTitle">콘텐츠 카테고리</h3>
+      <ul class="story-universe__grid">
+        <li><a href="#novels" data-scroll-to="#novels"><img src="assets/img/icons/celestial/novel.svg" alt="" width="112" height="112" decoding="async" loading="lazy" data-celestial="novel"><strong>Novel</strong><span class="story-universe__subtitle">소설</span></a></li>
+        <li><img src="assets/img/icons/celestial/visual-story.svg" alt="" width="112" height="112" decoding="async" loading="lazy" data-celestial="visual-story"><strong>Visual Story</strong><span class="story-universe__subtitle">삽화소설</span></li>
+        <li><img src="assets/img/icons/celestial/audiobook.svg" alt="" width="112" height="112" decoding="async" loading="lazy" data-celestial="audiobook"><strong>Audiobook</strong><span class="story-universe__subtitle">오디오북</span></li>
+        <li><img src="assets/img/icons/celestial/audio-drama.svg" alt="" width="112" height="112" decoding="async" loading="lazy" data-celestial="audio-drama"><strong>Audio Drama</strong><span class="story-universe__subtitle">오디오 드라마</span></li>
+        <li><img src="assets/img/icons/celestial/podcast.svg" alt="" width="112" height="112" decoding="async" loading="lazy" data-celestial="podcast"><strong>Podcast</strong><span class="story-universe__subtitle">팟캐스트</span></li>
+        <li><img src="assets/img/icons/celestial/cinematic-story.svg" alt="" width="112" height="112" decoding="async" loading="lazy" data-celestial="cinematic-story"><strong>Cinematic Story</strong><span class="story-universe__subtitle">AI 영상 · 단편영화</span></li>
+      </ul>
+    </div>
   </section>
 
   <div class="divider" aria-hidden="true"><span></span><i></i><span></span></div>
@@ -116,7 +127,7 @@
   <section class="section profile" id="profile" data-section="profile">
     <div class="section__head">
       <img class="section__banner" src="assets/img/banners/profile.webp" alt="" width="760" height="135" loading="lazy" decoding="async">
-      <p class="section__script">Profile</p>
+      <div class="section__emblem-title"><img class="section__emblem" src="assets/img/icons/celestial/about.svg" alt="" decoding="async" loading="lazy" data-celestial="about"><p class="section__script">Profile</p></div>
       <h2 class="section__title">ABOUT YEONWOL</h2>
     </div>
     <div class="profile__grid" id="profileBody"></div>
@@ -127,7 +138,7 @@
   <!-- ============ SKILL ============ -->
   <section class="section skill" id="skill" data-section="skill">
     <div class="section__head">
-      <img class="section__icon" src="assets/img/icons/skill.webp" alt="" width="109" height="105" loading="lazy">
+      <img class="section__icon" src="assets/img/icons/celestial/skill.svg" data-celestial="skill" alt="" width="109" height="105" loading="lazy">
       <p class="section__script">Skill</p>
       <h2 class="section__title">THE CRAFT OF WORLDS</h2>
       <p class="section__lead">AI는 이야기를 대신 쓰는 손이 아니라, 이야기 속 세계를 더 멀리 비추는 빛입니다.<br>모든 기술은 하나의 이야기를 완성하기 위한 도구로 쓰입니다.</p>
@@ -149,7 +160,7 @@
   <!-- ============ CONTACT ============ -->
   <section class="section contact" id="contact" data-section="contact">
     <div class="section__head">
-      <img class="section__icon" src="assets/img/icons/contact.webp" alt="" width="108" height="105" loading="lazy">
+      <img class="section__icon" src="assets/img/icons/celestial/contact.svg" data-celestial="contact" alt="" width="108" height="105" loading="lazy">
       <p class="section__script">Contact</p>
       <h2 class="section__title">LETTERS TO THE AUTHOR</h2>
       <p class="section__lead">이야기를 사랑하는 독자, 함께 세계를 만들고 싶은 창작자 누구에게나<br>이 서재의 문은 열려 있습니다. 한 통의 편지를 남겨 주세요.</p>
@@ -172,7 +183,7 @@
   <button class="bgm__toggle" id="bgmToggle" type="button" aria-pressed="false" aria-label="배경음악 켜기" aria-controls="bgmPanel">
     <span class="bgm__gem" aria-hidden="true"></span>
     <span class="bgm__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-    <svg class="bgm__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9H5z" fill="currentColor"/><path d="M17 9l4 6M21 9l-4 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <img class="bgm__off" src="assets/img/icons/celestial/ui-mute.svg" alt="">
   </button>
   <div class="bgm__panel" id="bgmPanel">
     <span class="bgm__title" id="bgmTitle" aria-live="polite">Background Music</span>
@@ -184,7 +195,7 @@
 </div>
 
 <button class="top-btn" id="topBtn" type="button" aria-label="맨 위로 이동">
-  <span class="top-btn__gem"></span><span class="top-btn__label">TOP</span>
+  <img class="top-btn__icon" src="assets/img/icons/celestial/ui-top.svg" alt=""><span class="top-btn__label">TOP</span>
 </button>
 
 <!-- ============ NOVEL MODAL (책이 펼쳐지는 상세 보기) ============ -->
@@ -195,7 +206,7 @@
     <div class="book__page book__page--left"><img alt="" id="bookLeftImg"></div>
     <div class="book__page book__page--right" id="bookRight" data-lenis-prevent></div>
   </div>
-  <button class="book-modal__close" type="button" data-close aria-label="닫기">✕</button>
+  <button class="book-modal__close" type="button" data-close aria-label="닫기"><img class="book-modal__close-icon" src="assets/img/icons/celestial/ui-close.svg" alt=""></button>
 </div>
 
 <noscript><p class="noscript">이 사이트는 JavaScript를 사용합니다. 브라우저에서 JavaScript를 켜 주세요.</p></noscript>
@@ -208,6 +219,7 @@
 <script src="js/data.js"></script>
 <script src="js/bgm.js"></script>
 <script src="js/space.js"></script>
+<script src="js/icons.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

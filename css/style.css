@@ -5,6 +5,11 @@
   /* === Midnight Royal — Modern Fantasy Luxury : 모든 색상은 여기서 관리 === */
   --bg:#050505;
   --bg-2:#101010;
+  --space-base:#0A0A0D;
+  --space-navy-rgb:36,41,53;
+  --space-plum-rgb:42,33,43;
+  --space-x:0;
+  --space-y:0;
   --card:#1B1B1B;
   --gold:#F5D88B;
   --gold-deep:#B48A40;
@@ -57,12 +62,6 @@ body{
   margin:0;background:var(--black);color:var(--ivory);
   font-family:var(--ko);font-size:16px;line-height:1.8;
   overflow-x:hidden;-webkit-font-smoothing:antialiased;
-  background:
-    radial-gradient(1100px 700px at 82% 8%,rgba(var(--gold-rgb),.055),transparent 60%),
-    radial-gradient(900px 640px at 8% 42%,rgba(var(--gold-deep-rgb),.06),transparent 62%),
-    radial-gradient(1000px 800px at 55% 95%,rgba(var(--silver-rgb),.04),transparent 60%),
-    var(--bg);
-  background-attachment:fixed;
 }
 body.is-loading{overflow:hidden}
 img{max-width:100%;display:block}
@@ -156,25 +155,21 @@ html{overflow-x:clip}
 .hero{position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:center;overflow:hidden;padding:calc(var(--header-h) + 20px) 20px 90px;isolation:isolate}
 .hero__bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
 .layer{position:absolute;will-change:transform}
-.hero__space{position:absolute;inset:0;width:100%;height:100%;display:block;background:#070a1e}
+.hero__space{position:absolute;inset:0;width:100%;height:100%;display:block;background:var(--space-base)}
 .hero__veil{position:absolute;inset:0;pointer-events:none;background:
-  radial-gradient(ellipse 52% 46% at 50% 46%,rgba(5,5,12,.55),rgba(5,5,12,.22) 60%,transparent 80%),
+  radial-gradient(ellipse 52% 46% at 50% 46%,rgba(var(--bg-rgb),.52),rgba(var(--bg-rgb),.20) 60%,transparent 80%),
   linear-gradient(180deg,rgba(5,5,5,.35) 0%,transparent 18%,transparent 70%,rgba(5,5,5,.75) 90%,#050505 100%)}
 .hero__moon{right:12%;top:13%}
 .moon{width:clamp(90px,11vw,160px);aspect-ratio:1;border-radius:50%;
   position:relative;
-  background:
-    radial-gradient(circle at 62% 40%,rgba(120,125,135,.16),transparent 9%),
-    radial-gradient(circle at 35% 62%,rgba(120,125,135,.14),transparent 13%),
-    radial-gradient(circle at 56% 72%,rgba(120,125,135,.12),transparent 7%),
-    radial-gradient(circle at 38% 35%,#ffffff 0%,#eef0f2 40%,#c5c8ce 75%,#80858d 100%);
-  box-shadow:0 0 50px rgba(var(--champ-rgb),.4),0 0 140px rgba(var(--champ-rgb),.16),inset -18px -12px 34px rgba(30,32,38,.55);opacity:.82}
+  background:var(--space-base) url('../assets/img/ornaments/full-moon-reference.png') 54% 48%/139% 126% no-repeat;
+  box-shadow:0 0 39px rgba(150,203,239,.24),0 0 94px rgba(150,203,239,.1);
+}
 .moon::after{content:"";position:absolute;inset:-60%;border-radius:50%;background:radial-gradient(circle,rgba(var(--champ-rgb),.12),transparent 60%)}
 .hero__still{left:4%;bottom:7%;width:clamp(200px,24vw,380px);height:auto;mix-blend-mode:screen;opacity:.55;
   -webkit-mask-image:radial-gradient(ellipse 50% 50% at 55% 50%,#000 45%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 55% 50%,#000 45%,transparent 100%)}
 .hero__orn{mix-blend-mode:screen;height:auto;opacity:.5;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 55%,transparent 100%)}
 .hero__orn--fox{right:7%;bottom:14%;width:clamp(60px,6vw,96px)}
-.hero__orn--rose{left:10%;top:22%;width:clamp(44px,4vw,70px);opacity:.42}
 .hero__orn--key{right:24%;bottom:8%;width:clamp(26px,2.4vw,40px);opacity:.38}
 .hero__content{position:relative;text-align:center;max-width:980px;margin-bottom:22vh}
 .hero__eyebrow{font-family:var(--caps);letter-spacing:.42em;font-size:clamp(10px,1vw,13px);color:var(--gold);display:flex;align-items:center;justify-content:center;gap:18px;margin:0 0 26px}
@@ -430,7 +425,6 @@ html{overflow-x:clip}
   .gem-grid{grid-template-columns:1fr}
   .hero__content{margin-bottom:18vh}
   .hero__still{opacity:.32;left:-6%;bottom:16%}
-  .hero__orn--rose{top:14%;left:4%}
   .hero__moon{right:6%;top:11%}
   .creative-list li{padding:10px 18px 10px 34px}
   .creative-list li::before{left:14px}
@@ -503,3 +497,89 @@ html{overflow-x:clip}
   .bgm__title{max-width:150px;font-size:12px}
 }
 @media (prefers-reduced-motion:reduce){ .bgm[data-state="on"] .bgm__bars i{animation:none;transform:scaleY(.7)} }
+
+/* 공통 우주 배경 — 안개와 별은 서로 다른 깊이로 이동합니다. */
+.section,.footer{
+  isolation:isolate;
+  --space-haze:.54;
+  --space-dust:.40;
+  --space-star-tile:415px 297px;
+}
+.portfolio{--space-haze:.42;--space-dust:.33;--space-star-tile:521px 367px}
+.skill{--space-haze:.32;--space-dust:.33;--space-star-tile:472px 334px}
+.footer{--space-haze:.72;--space-dust:.53;--space-star-tile:340px 245px}
+.section::before,.section::after,.footer::before,.footer::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:0;
+  pointer-events:none;
+  mask-image:radial-gradient(ellipse 77% 65% at 50% 50%,#000 38%,transparent 91%);
+}
+.section::before,.footer::before{
+  opacity:var(--space-haze);
+  background:
+    radial-gradient(ellipse 64% 54% at 79% 31%,rgba(var(--gold-deep-rgb),.16),transparent 77%),
+    radial-gradient(ellipse 62% 49% at 22% 62%,rgba(var(--space-navy-rgb),.32),transparent 78%),
+    radial-gradient(ellipse 50% 36% at 48% 77%,rgba(var(--space-plum-rgb),.15),transparent 83%);
+  transform:translate(calc(var(--space-x) * 6px),calc(var(--space-y) * 4px));
+  transition:transform 1.2s var(--ease);
+}
+.section::after,.footer::after{
+  opacity:var(--space-dust);
+  background-image:
+    radial-gradient(circle at 8% 22%,rgba(var(--silver-l-rgb),.55) 0 .6px,transparent 1.5px),
+    radial-gradient(circle at 26% 69%,rgba(var(--gold-rgb),.48) 0 .6px,transparent 2.3px),
+    radial-gradient(circle at 42% 41%,rgba(var(--silver-rgb),.34) 0 .5px,transparent 1.3px),
+    radial-gradient(circle at 67% 17%,rgba(var(--silver-l-rgb),.45) 0 .65px,transparent 1.75px),
+    radial-gradient(circle at 83% 52%,rgba(var(--gold-rgb),.42) 0 .52px,transparent 1.3px),
+    radial-gradient(circle at 57% 86%,rgba(var(--champ-rgb),.45) 0 .55px,transparent 1.35px),
+    radial-gradient(circle at 94% 74%,rgba(var(--silver-rgb),.38) 0 .55px,transparent 1.35px);
+  background-size:var(--space-star-tile);
+  transform:translate(calc(var(--space-x) * 19px),calc(var(--space-y) * 13px));
+  transition:transform .85s var(--ease);
+}
+@media(prefers-reduced-motion:reduce){
+  .section::before,.section::after,.footer::before,.footer::after{transform:none;transition:none}
+}
+
+/* Celestial metallic icons */
+.nav__icon img,.crystal-btn__gem img,.contact-card img,.section__icon{
+  mix-blend-mode:normal;mask-image:none;-webkit-mask-image:none;filter:none;
+}
+.nav__icon img{width:23px;height:23px;opacity:.82}
+.nav__link.is-active .nav__icon::before{opacity:.48;animation:none}
+.nav__link.is-active .nav__icon img{filter:none}
+.crystal-btn__gem img{width:29px;height:29px}
+.crystal-btn--sm .crystal-btn__gem img{width:22px;height:22px}
+.contact-card img{width:96px;aspect-ratio:1;object-fit:contain;padding:18px}
+.book-modal__close-icon{width:20px;height:20px;margin:auto}
+.top-btn__icon{width:19px;height:19px;align-self:end}
+.top-btn__label{align-self:start}
+.top-btn{background:radial-gradient(ellipse at 50% 0,rgba(var(--gold-rgb),.10),var(--bg));border:1px solid var(--line);border-radius:50%}
+.top-btn:hover{border-color:var(--gold)}
+.bgm__off{object-fit:contain}
+.gem-card .gem{display:block;padding:7px;filter:drop-shadow(0 0 6px rgba(var(--gold-rgb),.15))}
+
+.section__emblem-title{position:relative}
+.section__emblem{width:100%;height:auto}
+.celestial-emblem{display:block;width:84px;aspect-ratio:1;flex:none;animation:celestial-float 6.8s ease-in-out infinite;animation-delay:var(--float-delay)}
+.celestial-emblem--section{margin-bottom:-8px}
+.celestial-emblem--section .section__icon{width:100%;margin:0}
+.celestial-emblem--heading{position:absolute;width:clamp(27px,4vw,53px);right:calc(100% + 3px);top:50%;margin-top:calc(clamp(27px,4vw,53px) / -2)}
+.celestial-emblem__art{display:block;position:relative;width:100%;height:100%}
+.celestial-emblem__art img{display:block;width:100%;height:100%;object-fit:contain}
+.celestial-emblem__shine{position:absolute;inset:0;opacity:0;filter:brightness(1.85);pointer-events:none}
+@keyframes celestial-float{50%{transform:translateY(-2px)}}
+
+.story-universe{margin-top:clamp(70px,9vw,125px);text-align:center}
+.story-universe__grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(10px,1.55vw,20px);list-style:none;padding:0;margin:28px 0 0}
+.story-universe__grid li{min-width:0;border:1px solid var(--line);border-radius:8px;padding:15px 6px;background:linear-gradient(145deg,rgba(var(--card-rgb),.7),rgba(var(--bg-rgb),.74))}
+.story-universe__grid a{display:block}
+.story-universe__grid .celestial-emblem{margin:0 auto 9px}
+.story-universe__grid strong{display:block;font-family:var(--serif);font-size:clamp(16px,1.7vw,23px);color:var(--champagne);line-height:1.1}
+.story-universe__subtitle{display:block;color:var(--ivory-dim);font-family:var(--ko2);font-size:13px;margin-top:5px}
+.story-universe__grid a:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+@media(max-width:940px){.story-universe__grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:480px){.story-universe__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.celestial-emblem{animation:none}.celestial-emblem__art .celestial-emblem__shine{display:none}}
