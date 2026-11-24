@@ -68,30 +68,14 @@
   <!-- ============ HERO ============ -->
   <section class="hero" id="home" data-section="home">
     <div class="hero__bg" aria-hidden="true">
-      <div class="hero__sky layer" data-depth="0.15"></div>
+      <canvas class="hero__space" id="heroSpace"></canvas>
       <div class="hero__moon layer" data-depth="0.35"><div class="moon"></div></div>
-      <div class="hero__stars layer" data-depth="0.25"></div>
       <img class="hero__still layer" data-depth="0.55" src="assets/img/ornaments/quill-books.webp" alt="" width="422" height="228">
       <img class="hero__orn hero__orn--fox layer" data-depth="0.7" src="assets/img/ornaments/fox.webp" alt="" width="100" height="160">
       <img class="hero__orn hero__orn--rose layer" data-depth="0.8" src="assets/img/ornaments/rose.webp" alt="" width="98" height="84">
       <img class="hero__orn hero__orn--key layer" data-depth="0.9" src="assets/img/ornaments/key.webp" alt="" width="56" height="90">
-      <div class="hero__book layer" data-depth="0.45">
-        <div class="book-rays"></div>
-        <svg class="book-svg" viewBox="0 0 400 170" fill="none">
-          <defs>
-            <linearGradient id="bkGold" x1="0" x2="1"><stop offset="0" stop-color="#7a5a2c"/><stop offset=".5" stop-color="#f3dca6"/><stop offset="1" stop-color="#7a5a2c"/></linearGradient>
-            <radialGradient id="bkPage" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#fff6dc"/><stop offset=".6" stop-color="#d9bf86" stop-opacity=".55"/><stop offset="1" stop-color="#3a2a14" stop-opacity=".2"/></radialGradient>
-          </defs>
-          <path d="M200 40 C150 18 80 16 18 30 L18 140 C80 126 150 128 200 152 Z" fill="url(#bkPage)" stroke="url(#bkGold)" stroke-width="1.5"/>
-          <path d="M200 40 C250 18 320 16 382 30 L382 140 C320 126 250 128 200 152 Z" fill="url(#bkPage)" stroke="url(#bkGold)" stroke-width="1.5"/>
-          <path d="M200 40 L200 152" stroke="url(#bkGold)" stroke-width="1.2"/>
-          <g stroke="#c9a45f" stroke-opacity=".45" stroke-width=".8">
-            <path d="M40 52 C90 42 150 44 185 58"/><path d="M40 68 C90 58 150 60 185 74"/><path d="M40 84 C90 74 150 76 185 90"/><path d="M40 100 C90 90 150 92 185 106"/>
-            <path d="M360 52 C310 42 250 44 215 58"/><path d="M360 68 C310 58 250 60 215 74"/><path d="M360 84 C310 74 250 76 215 90"/><path d="M360 100 C310 90 250 92 215 106"/>
-          </g>
-          <path d="M10 146 C80 132 150 134 200 160 C250 134 320 132 390 146" stroke="url(#bkGold)" stroke-width="2"/>
-        </svg>
-      </div>
+      <div class="hero__veil"></div>
+    </div>
     </div>
 
     <div class="hero__content">
@@ -223,6 +207,7 @@
 <!-- 콘텐츠 데이터 → 화면 -->
 <script src="js/data.js"></script>
 <script src="js/bgm.js"></script>
+<script src="js/space.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -156,11 +156,10 @@ html{overflow-x:clip}
 .hero{position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:center;overflow:hidden;padding:calc(var(--header-h) + 20px) 20px 90px;isolation:isolate}
 .hero__bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
 .layer{position:absolute;will-change:transform}
-.hero__sky{inset:-10%;background:
-  radial-gradient(ellipse 60% 45% at 50% 80%,rgba(var(--gold-rgb),.10),transparent 70%),
-  radial-gradient(ellipse 45% 38% at 78% 18%,rgba(var(--champ-rgb),.07),transparent 70%),
-  radial-gradient(ellipse 45% 40% at 14% 32%,rgba(var(--gold-deep-rgb),.10),transparent 70%),
-  radial-gradient(ellipse 60% 50% at 50% 100%,rgba(var(--silver-rgb),.06),transparent 70%)}
+.hero__space{position:absolute;inset:0;width:100%;height:100%;display:block;background:#070a1e}
+.hero__veil{position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(ellipse 52% 46% at 50% 46%,rgba(5,5,12,.55),rgba(5,5,12,.22) 60%,transparent 80%),
+  linear-gradient(180deg,rgba(5,5,5,.35) 0%,transparent 18%,transparent 70%,rgba(5,5,5,.75) 90%,#050505 100%)}
 .hero__moon{right:12%;top:13%}
 .moon{width:clamp(90px,11vw,160px);aspect-ratio:1;border-radius:50%;
   position:relative;
@@ -171,24 +170,12 @@ html{overflow-x:clip}
     radial-gradient(circle at 38% 35%,#ffffff 0%,#eef0f2 40%,#c5c8ce 75%,#80858d 100%);
   box-shadow:0 0 50px rgba(var(--champ-rgb),.4),0 0 140px rgba(var(--champ-rgb),.16),inset -18px -12px 34px rgba(30,32,38,.55);opacity:.82}
 .moon::after{content:"";position:absolute;inset:-60%;border-radius:50%;background:radial-gradient(circle,rgba(var(--champ-rgb),.12),transparent 60%)}
-.hero__stars{inset:-5%;background-image:
-  radial-gradient(1px 1px at 10% 20%,#fff,transparent),radial-gradient(1px 1px at 30% 70%,#f6e7c1,transparent),
-  radial-gradient(1.5px 1.5px at 60% 15%,#fff,transparent),radial-gradient(1px 1px at 80% 55%,var(--champagne),transparent),
-  radial-gradient(1px 1px at 45% 40%,#fff,transparent),radial-gradient(1.5px 1.5px at 90% 85%,#fff,transparent),
-  radial-gradient(1px 1px at 20% 90%,var(--champagne),transparent),radial-gradient(1px 1px at 70% 35%,#fff,transparent);opacity:.7}
 .hero__still{left:4%;bottom:7%;width:clamp(200px,24vw,380px);height:auto;mix-blend-mode:screen;opacity:.55;
   -webkit-mask-image:radial-gradient(ellipse 50% 50% at 55% 50%,#000 45%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 55% 50%,#000 45%,transparent 100%)}
 .hero__orn{mix-blend-mode:screen;height:auto;opacity:.5;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 55%,transparent 100%)}
 .hero__orn--fox{right:7%;bottom:14%;width:clamp(60px,6vw,96px)}
 .hero__orn--rose{left:10%;top:22%;width:clamp(44px,4vw,70px);opacity:.42}
 .hero__orn--key{right:24%;bottom:8%;width:clamp(26px,2.4vw,40px);opacity:.38}
-.hero__book{left:0;right:0;margin:0 auto;bottom:3%;width:min(440px,74vw)}
-.book-svg{position:relative;width:100%;height:auto;filter:drop-shadow(0 0 18px rgba(var(--champ-rgb),.35))}
-.book-rays{position:absolute;left:50%;bottom:55%;width:140%;height:520%;transform:translateX(-50%);transform-origin:50% 100%;
-  background:
-   conic-gradient(from 180deg at 50% 100%,transparent 0deg,transparent 140deg,rgba(var(--champ-rgb),.0) 150deg,rgba(var(--champ-rgb),.16) 165deg,rgba(var(--champ-rgb),.24) 180deg,rgba(var(--champ-rgb),.16) 195deg,rgba(var(--champ-rgb),0) 210deg,transparent 220deg,transparent 360deg);
-  -webkit-mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.6) 40%,transparent 90%);mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.6) 40%,transparent 90%);
-  filter:blur(6px);opacity:.0}
 .hero__content{position:relative;text-align:center;max-width:980px;margin-bottom:22vh}
 .hero__eyebrow{font-family:var(--caps);letter-spacing:.42em;font-size:clamp(10px,1vw,13px);color:var(--gold);display:flex;align-items:center;justify-content:center;gap:18px;margin:0 0 26px}
 .hero__eyebrow .line{display:block;width:clamp(30px,6vw,80px);height:1px;background:linear-gradient(90deg,transparent,var(--gold))}

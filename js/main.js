@@ -214,7 +214,7 @@
       gx(e.clientX); gy(e.clientY);
       if (window.scrollY > window.innerHeight) return;
       const nx = e.clientX / window.innerWidth - 0.5, ny = e.clientY / window.innerHeight - 0.5;
-      movers.forEach((m) => { m.x(-nx * 44 * m.d); m.y(-ny * 26 * m.d); });
+      movers.forEach((m) => { m.x(nx * 44 * m.d); m.y(ny * 26 * m.d); });
     }, { passive: true });
   } else { glow.style.opacity = 0; }
 
@@ -374,23 +374,18 @@
     gsap.set(koChars, { opacity: 0, y: "0.25em", filter: "blur(10px)" });
     gsap.set(enChars, { opacity: 0, filter: "blur(4px)" });
     gsap.set(heroBits, { opacity: 0, y: 24 });
-    gsap.set(".book-rays", { opacity: 0, scaleY: 0.2 });
-    gsap.set(".hero__book", { opacity: 0, y: 30 });
     gsap.set([".hero__moon", ".hero__still", ".hero__orn"], { opacity: 0 });
   }
   function playHero() {
-    if (!hasGSAP || REDUCED) { $(".book-rays").style.opacity = 0.9; return; }
+    if (!hasGSAP || REDUCED) return;
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-    tl.to(".hero__book", { opacity: 1, y: 0, duration: 1.8 }, 0)
-      .to(".book-rays", { opacity: 1, scaleY: 1, duration: 3.2, ease: "power2.out" }, 0.4)
-      .to(".hero__moon", { opacity: 1, duration: 2.4 }, 0.3)
+    tl.to(".hero__moon", { opacity: 1, duration: 2.4 }, 0.3)
       .to(".hero__still", { opacity: 0.55, duration: 2.4 }, 0.8)
       .to(".hero__orn", { opacity: 0.45, duration: 2.4, stagger: 0.3 }, 1)
       .to(heroBits[0], { opacity: 1, y: 0, duration: 1.4 }, 0.6)
       .to(koChars, { opacity: 1, y: 0, filter: "blur(0px)", duration: 1.2, stagger: 0.075, ease: "power2.out" }, 1.0)
       .to(enChars, { opacity: 1, filter: "blur(0px)", duration: 0.7, stagger: 0.022, ease: "none" }, ">-0.5")
-      .to(heroBits.slice(1), { opacity: 1, y: 0, duration: 1.4, stagger: 0.25 }, ">-0.4")
-      .add(() => gsap.to(".book-rays", { opacity: 0.75, duration: 4, yoyo: true, repeat: -1, ease: "sine.inOut" }));
+      .to(heroBits.slice(1), { opacity: 1, y: 0, duration: 1.4, stagger: 0.25 }, ">-0.4");
   }
 
   /* ---------------- 10. 시네마틱 영상 인트로 ---------------- */
